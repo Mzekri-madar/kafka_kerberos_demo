@@ -37,8 +37,10 @@ KafkaClient {
       	com.sun.security.auth.module.Krb5LoginModule required
         useKeyTab=true
         storeKey=true
-        keyTab="jane.keytab"
-        principal="jane@EXAMPLE.COM";
+        keyTab="kafka_client.keytab"
+        useTicketCache=false
+        serviceName=kafka
+        principal="kafka_client/kclient.madar.com@MADAR.COM";
 };
 ```
 ### Zookeeper configuration
