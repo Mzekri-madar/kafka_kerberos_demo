@@ -6,5 +6,5 @@
  fi
 
  set -x
- java -classpath .:target/"*" -Djava.security.auth.login.config=$2 kerberos_example.KafakaConsumerKerberos $*
+ java -classpath .:target/"*" -Djava.security.auth.login.config=$2 kerberos_example.KafkaConsumerKerberos $*
 

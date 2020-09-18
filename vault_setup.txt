@@ -1,0 +1,10 @@
+./vault auth enable userpass
+./vault policy-write writers writers.hcl
+./vault write auth/userpass/users/vault_user password=vault_pass policies=writers
+./vault secrets enable pki -path=pki/
+./vault secrets tune -max-lease-ttl=87600h pki
+./vault write pki/root/generate/internal common_name=myvault.com ttl=87600h
+./vault write pki/roles/kafka-broker allowed_domains="madar.com" allow_subdomains="true" max_ttl="72h"
+./vault write pki/roles/kafka-consumer allowed_domains="madar.com" allow_subdomains="true" max_ttl="72h"
+./vault write pki/roles/kafka-producer allowed_domains="madar.com" allow_subdomains="true" max_ttl="72h"
+./vault write pki/issue/kafka-broker common_name=kclient.madar.com
