@@ -2,7 +2,7 @@
 First, you need to create principals and key tabs for Kafka_server, kafka_client, zookeeper server and zookeeper client then download kafka and put it in the repo root
 ## Configuration
 ### Setup TLS keys
-#1 Run Vault
+#### 1 Run Vault
 ------------
 * Download [Vault](https://www.vaultproject.io/downloads.html), and startup an instance in dev mode:
 
@@ -33,7 +33,7 @@ set VAULT_ADDR=http://127.0.0.1:8200
 
 The `writers.hcl` file is located in the root of this repo.
 
-#2 Create a Root CA
+#### 2 Create a Root CA
 -------------------
 
 * That last Vault command will write to the console three blocks of text in PEM format.  Copy those three blocks into 
