@@ -1,6 +1,7 @@
 # kafka_kerberos_demo
 First, you need to create principals and key tabs for Kafka_server, kafka_client, zookeeper server and zookeeper client then download kafka and put it in the repo root
 ## Configuration
+
 ### Setup TLS keys
 #### 1 Run Vault
 ------------
@@ -62,6 +63,7 @@ openssl x509 -in issuing_ca.pem -out ca.der -outform der
 ```
 keytool.exe -importcert -alias CARoot -file ca.der -keystore truststore.jks
 ```
+
 ### Kafka server
 #### kafka_server_jaas.conf
 ```
