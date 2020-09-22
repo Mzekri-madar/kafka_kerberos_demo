@@ -61,7 +61,7 @@ openssl x509 -in issuing_ca.pem -out ca.der -outform der
 * Convert the DER file into a Java truststore:
 
 ```
-keytool.exe -importcert -alias CARoot -file ca.der -keystore truststore.jks
+keytool -importcert -alias CARoot -file ca.der -keystore truststore.jks
 ```
 
 ### Kafka server
